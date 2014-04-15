@@ -1,0 +1,114 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<!--  US English dictionary for AbcImportExport plugin.   -->
+<xsidict>
+  <namespace name="ABCIMPORTEXPORT" headerfile="sidictres.h" langs="en,jp">
+    <dictstring context="ExportAbcOptions PPG" locid="ABCIMPORTEXPORT_1">
+      <dictkey>Time Range</dictkey>
+      <dictval lang="jp">時間範囲</dictval>
+    </dictstring>
+    <dictstring context="ExportAbcOptions PPG" locid="ABCIMPORTEXPORT_2">
+      <dictkey>Start Frame</dictkey>
+      <dictval lang="jp">開始フレーム</dictval>
+    </dictstring>
+    <dictstring context="ExportAbcOptions PPG" locid="ABCIMPORTEXPORT_3">
+      <dictkey>End Frame</dictkey>
+      <dictval lang="jp">終了フレーム</dictval>
+    </dictstring>
+    <dictstring context="ExportAbcOptions PPG" locid="ABCIMPORTEXPORT_4">
+      <dictkey>Include hierarchy up to Scene Root</dictkey>
+      <dictval lang="jp">シーン ルートまでの階層を含める</dictval>
+    </dictstring>
+    <dictstring context="Title for file open dialog when importing" locid="ABCIMPORTEXPORT_5">
+      <dictkey>Alembic Import</dictkey>
+      <dictval lang="jp">Alembic の読み込み</dictval>
+    </dictstring>
+    <dictstring context="Title for file save dialog when importing" locid="ABCIMPORTEXPORT_6">
+      <dictkey>Alembic Export</dictkey>
+      <dictval lang="jp">Alembic の書き出し</dictval>
+    </dictstring>
+    <dictstring context="The file filter in file open or save dialog" locid="ABCIMPORTEXPORT_7">
+      <dictkey>Alembic Files(*.abc)|*.abc||</dictkey>
+      <dictval lang="jp">Alembic ファイル(*.abc)|*.abc||</dictval>
+    </dictstring>
+    <dictstring context="ImportAbcOptions PPG" locid="ABCIMPORTEXPORT_8">
+      <dictkey>Options</dictkey>
+      <dictval lang="jp">オプション</dictval>
+    </dictstring>
+    <dictstring context="ImportAbcOptions PPG" locid="ABCIMPORTEXPORT_9">
+      <dictkey>Import under newly created Model</dictkey>
+      <dictval lang="jp">新しく作成されたモデルの下に読み込む</dictval>
+    </dictstring>
+    <dictstring context="ImportAbcOptions PPG" locid="ABCIMPORTEXPORT_10">
+      <dictkey>ICE Trees for Importing</dictkey>
+      <dictval lang="jp">読み込む ICE Tree</dictval>
+    </dictstring>
+    <dictstring context="ImportAbcOptions PPG" locid="ABCIMPORTEXPORT_11">
+      <dictkey>Multiple - One per Object</dictkey>
+      <dictval lang="jp">複数 - オブジェクトごとに 1 つ</dictval>
+    </dictstring>
+    <dictstring context="ImportAbcOptions PPG" locid="ABCIMPORTEXPORT_12">
+      <dictkey>Single - One driving all Objects</dictkey>
+      <dictval lang="jp">単一 - 1 つですべてのオブジェクトを駆動する</dictval>
+    </dictstring>
+    <dictstring context="Error message if no object is specified" locid="ABCIMPORTEXPORT_13">
+      <dictkey>No object is specified to export</dictkey>
+      <dictval lang="jp">書き出すオブジェクトが指定されていません</dictval>
+    </dictstring>
+    <dictstring context="ExportAbcOptions PPG" locid="ABCIMPORTEXPORT_14">
+      <dictkey>Include ICE Attributes</dictkey>
+      <dictval lang="jp">ICE アトリビュートを含める</dictval>
+    </dictstring>
+    <dictstring context="ExportAbcOptions PPG" locid="ABCIMPORTEXPORT_15">
+      <dictkey>All</dictkey>
+      <dictval lang="jp">すべて</dictval>
+    </dictstring>
+    <dictstring context="ExportAbcOptions PPG" locid="ABCIMPORTEXPORT_16">
+      <dictkey>Only Rendering Related</dictkey>
+	  <dictval lang="jp">レンダリング関連のみ</dictval>
+	</dictstring>
+	<dictstring context="Error message if no supported object is specified" locid="ABCIMPORTEXPORT_17">
+	  <dictkey>No supported object found to export</dictkey>
+	  <dictval lang="jp">書き出しがサポートされるオブジェクトが見つかりません</dictval>
+	</dictstring>
+  <dictstring context="ExportAbcOptions PPG" locid="ABCIMPORTEXPORT_18">
+    <dictkey>Add Default Attributes</dictkey>
+    <dictval lang="jp">デフォルトのアトリビュートを追加</dictval>
+  </dictstring>
+  <dictstring context="ExportAbcOptions PPG" locid="ABCIMPORTEXPORT_19">
+    <dictkey>Clear</dictkey>
+    <dictval lang="jp">クリア</dictval>
+  </dictstring>
+	<dictstring context="Error message if user wants to export an unsupported attribute, e.g. PointLocator" locid="ABCIMPORTEXPORT_20">
+      <dictkey>Attribute data type is not supported</dictkey>
+      <dictval lang="jp">アトリビュートのデータ タイプがサポートされていません</dictval>
+  </dictstring>
+  <dictstring context="Error message if user specifies an attribute that doesn't exist on any object" locid="ABCIMPORTEXPORT_21">
+    <dictkey>Attribute not exported</dictkey>
+    <dictval lang="jp">書き出されないアトリビュート</dictval>
+  </dictstring>
+  <dictstring context="ExportAbcOptions PPG" locid="ABCIMPORTEXPORT_22">
+    <dictkey>ICE Attributes for Polygon Meshes</dictkey>
+    <dictval lang="jp">ポリゴン メッシュの ICE アトリビュート</dictval>
+  </dictstring>
+  <dictstring context="ExportAbcOptions PPG" locid="ABCIMPORTEXPORT_23">
+    <dictkey>ICE Attributes for Pointclouds</dictkey>
+    <dictval lang="jp">ポイントクラウドの ICE アトリビュート</dictval>
+  </dictstring>
+  <dictstring context="ExportAbcOptions PPG" locid="ABCIMPORTEXPORT_24">
+    <dictkey>Delete All</dictkey>
+    <dictval lang="jp">すべて削除</dictval>
+  </dictstring>
+  <dictstring context="ExportAbcOptions PPG" locid="ABCIMPORTEXPORT_25">
+    <dictkey>Archive Format</dictkey>
+    <dictval lang="jp">アーカイブ フォーマット</dictval>
+  </dictstring>
+  <dictstring context="ExportAbcOptions PPG" locid="ABCIMPORTEXPORT_26">
+    <dictkey>PointPosition and ID will always be exported</dictkey>
+    <dictval lang="jp">ポイント位置と ID は常に書き出されます</dictval>
+  </dictstring>
+  <dictstring context="ExportAbcOptions PPG" locid="ABCIMPORTEXPORT_27">
+    <dictkey>ICE Attributes for other primitives</dictkey>
+    <dictval lang="jp">その他のプリミティブの ICE アトリビュート</dictval>
+  </dictstring>
+  </namespace>
+</xsidict>
