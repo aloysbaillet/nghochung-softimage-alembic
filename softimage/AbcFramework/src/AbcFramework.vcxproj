@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{16866A00-9919-4B6F-BFDD-297D1194B935}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>AbcFramework</RootNamespace>
+    <ProjectName>AbcFramework</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\Application\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\bin\nt-x86\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\Application\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\bin\nt-x86-64\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\Application\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\bin\nt-x86\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\Application\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\bin\nt-x86-64\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;ABCFRAMEWORK_EXPORTS;ABCFRAMEWORK_IMPL;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>AbcFramework.def</ModuleDefinitionFile>
+      <AdditionalDependencies>AlembicAbcCoreFactory.lib;AlembicOgawa.lib;AlembicAbc.lib;AlembicAbcCollection.lib;AlembicAbcCoreAbstract.lib;AlembicAbcCoreHDF5.lib;AlembicAbcCoreOgawa.lib;AlembicAbcGeom.lib;AlembicAbcMaterial.lib;AlembicUtil.lib;hdf5d.lib;hdf5_hld.lib;zlib_db.lib;half.lib;Iex.lib;IlmThread.lib;Imath.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Alembic\vc11\debug\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;ABCFRAMEWORK_EXPORTS;ABCFRAMEWORK_IMPL;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>AbcFramework.def</ModuleDefinitionFile>
+      <AdditionalDependencies>AlembicAbcCoreFactory.lib;AlembicOgawa.lib;AlembicAbc.lib;AlembicAbcCollection.lib;AlembicAbcCoreAbstract.lib;AlembicAbcCoreHDF5.lib;AlembicAbcCoreOgawa.lib;AlembicAbcGeom.lib;AlembicAbcMaterial.lib;AlembicUtil.lib;hdf5d.lib;hdf5_hld.lib;zlib_db.lib;half.lib;Iex.lib;IlmThread.lib;Imath.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Alembic\vc11\debug\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;ABCFRAMEWORK_EXPORTS;ABCFRAMEWORK_IMPL;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>AbcFramework.def</ModuleDefinitionFile>
+      <AdditionalDependencies>AlembicAbcCoreFactory.lib;AlembicOgawa.lib;AlembicAbc.lib;AlembicAbcCollection.lib;AlembicAbcCoreAbstract.lib;AlembicAbcCoreHDF5.lib;AlembicAbcCoreOgawa.lib;AlembicAbcGeom.lib;AlembicAbcMaterial.lib;AlembicUtil.lib;hdf5.lib;hdf5_hl.lib;zlib.lib;half.lib;Iex.lib;IlmThread.lib;Imath.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Alembic\vc11\release\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;ABCFRAMEWORK_EXPORTS;ABCFRAMEWORK_IMPL;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>AbcFramework.def</ModuleDefinitionFile>
+      <AdditionalDependencies>AlembicAbcCoreFactory.lib;AlembicOgawa.lib;AlembicAbc.lib;AlembicAbcCollection.lib;AlembicAbcCoreAbstract.lib;AlembicAbcCoreHDF5.lib;AlembicAbcCoreOgawa.lib;AlembicAbcGeom.lib;AlembicAbcMaterial.lib;AlembicUtil.lib;hdf5.lib;hdf5_hl.lib;zlib.lib;half.lib;Iex.lib;IlmThread.lib;Imath.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Alembic\vc11\release\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\include;..\..\Alembic\include\OpenEXR;..\..\Alembic\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ABCFRAMEWORK_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AbcFrameworkMem.cpp" />
+    <ClCompile Include="CAbcDataTypeHelper.cpp" />
+    <ClCompile Include="CAbcFramework.cpp" />
+    <ClCompile Include="AbcFrameworkDll.cpp" />
+    <ClCompile Include="CAbcIArchive.cpp" />
+    <ClCompile Include="CAbcICamera.cpp" />
+    <ClCompile Include="CAbcIFaceSet.cpp" />
+    <ClCompile Include="CAbcInput.cpp" />
+    <ClCompile Include="CAbcIPoints.cpp" />
+    <ClCompile Include="CAbcIPolyMesh.cpp" />
+    <ClCompile Include="CAbcIPropertyAccessor.cpp" />
+    <ClCompile Include="CAbcISampleSelector.cpp" />
+    <ClCompile Include="CAbcIXform.cpp" />
+    <ClCompile Include="CAbcOArchive.cpp" />
+    <ClCompile Include="CAbcOCamera.cpp" />
+    <ClCompile Include="CAbcOFaceSet.cpp" />
+    <ClCompile Include="CAbcOObjectFactory.cpp" />
+    <ClCompile Include="CAbcOPoints.cpp" />
+    <ClCompile Include="CAbcOPolyMesh.cpp" />
+    <ClCompile Include="CAbcOProperty.cpp" />
+    <ClCompile Include="CAbcOPropertyFactory.cpp" />
+    <ClCompile Include="CAbcOXform.cpp" />
+    <ClCompile Include="CAbcTimeSampling.cpp" />
+    <ClCompile Include="CAbcUtils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\AbcFramework.h" />
+    <ClInclude Include="..\include\AbcFrameworkCoreAbstractDataType.h" />
+    <ClInclude Include="..\include\AbcFrameworkDataTypeConverter.h" />
+    <ClInclude Include="..\include\AbcFrameworkDataTypeExtension.h" />
+    <ClInclude Include="..\include\AbcFrameworkDataTypes.h" />
+    <ClInclude Include="..\include\AbcFrameworkDll.h" />
+    <ClInclude Include="..\include\AbcFrameworkImportedTypes.h" />
+    <ClInclude Include="..\include\AbcFrameworkLoader.h" />
+    <ClInclude Include="..\include\AbcFrameworkMem.h" />
+    <ClInclude Include="..\include\AbcFrameworkPlainOldDataType.h" />
+    <ClInclude Include="..\include\AbcFrameworkTypedPropertyTraits.h" />
+    <ClInclude Include="..\include\AbcFrameworkUtil.h" />
+    <ClInclude Include="..\include\AbcFrameworkVersion.h" />
+    <ClInclude Include="..\include\CAbcDataTypeHelper.h" />
+    <ClInclude Include="..\include\CAbcFramework.h" />
+    <ClInclude Include="..\include\CAbcInput.h" />
+    <ClInclude Include="..\include\CAbcInput_Helpers.h" />
+    <ClInclude Include="..\include\CAbcOCamera.h" />
+    <ClInclude Include="..\include\CAbcOFaceSet.h" />
+    <ClInclude Include="..\include\CAbcOPoints.h" />
+    <ClInclude Include="..\include\CAbcOProperty.h" />
+    <ClInclude Include="..\include\CAbcOPropertyFactory.h" />
+    <ClInclude Include="..\include\CAbcOutput_Helpers.h" />
+    <ClInclude Include="..\include\CAbcIPropertyAccessor.h" />
+    <ClInclude Include="..\include\CAbcUtils.h" />
+    <ClInclude Include="..\include\IAbcFramework.h" />
+    <ClInclude Include="..\include\CRefCount.h" />
+    <ClInclude Include="..\include\IAbcInput.h" />
+    <ClInclude Include="..\include\CAbcOArchive.h" />
+    <ClInclude Include="..\include\CAbcOObject.h" />
+    <ClInclude Include="..\include\CAbcOPolyMesh.h" />
+    <ClInclude Include="..\include\CAbcOXform.h" />
+    <ClInclude Include="..\include\CAbcOObjectFactory.h" />
+    <ClInclude Include="..\include\IAbcOProperty.h" />
+    <ClInclude Include="..\include\IAbcOutput.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AbcFramework.def" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

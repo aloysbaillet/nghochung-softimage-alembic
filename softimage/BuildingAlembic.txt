@@ -1,0 +1,11 @@
+NOTES ON BUILDING ALEMBIC 1.5.1
+
+Windows:
+	Alembic source code include the projects for Visual Studio, they are found under build/Windows.
+	Please refer to WindowsBuildSteps.html in that folder for more information.
+
+Linux:
+	Due to Softimage requirement of gcc 4.1.2, Alembic libraries need to be built with the same gcc version.
+	Note: Alembic dependencies need to be built with gcc 4.1.2 too, including:
+		cmake
+		boost 1.53

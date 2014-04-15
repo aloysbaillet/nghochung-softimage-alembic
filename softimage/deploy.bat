@@ -1,0 +1,1 @@
+robocopy /s /nfl /ndl .\Application "%SI_HOME%\Application" *.dll *.dict

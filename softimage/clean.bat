@@ -1,0 +1,1 @@
+msbuild AbcXsi.sln /target:Clean /p:Configuration=Release /p:Platform=x64
