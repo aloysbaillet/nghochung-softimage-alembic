@@ -180,5 +180,8 @@ private:
     std::map < MObject, MSelectionList, ltMObj > mShaderMeshMap;
 };  // class CreateSceneVisitor
 
-
+namespace CreateSceneHelper
+{
+    void addFaceSets(MObject & iNode, Alembic::Abc::IObject & iObj);
+}
 #endif  // ABCIMPORT_CREATE_SCENE_H_

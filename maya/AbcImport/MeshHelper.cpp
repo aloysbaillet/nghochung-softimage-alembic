@@ -988,9 +988,13 @@ MObject createPoly(double iFrame, PolyMeshAndColors & iNode,
     }
 
     MFnMesh fnMesh(obj);
-
-    MString pathName = fnMesh.partialPathName();
-    setInitialShadingGroup(pathName);
+	std::vector< std::string > faceSetNames;
+	schema.getFaceSetNames( faceSetNames );
+	if ( faceSetNames.empty() )
+	{
+		MString pathName = fnMesh.partialPathName();
+		setInitialShadingGroup(pathName);
+	}
 
     setColors(iFrame, fnMesh, iNode.mC3s, iNode.mC4s, true);
 

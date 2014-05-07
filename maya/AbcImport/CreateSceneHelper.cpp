@@ -73,7 +73,7 @@
 #include <vector>
 
 
-namespace
+namespace CreateSceneHelper
 {
     void copyIndicesToNode(MIntArray& iIndices, const MObject& iNode,
                            MObject& iSet)
@@ -188,10 +188,6 @@ namespace
 
                 // check if this SG already exists.
                 status = getObjectByName(faceSetName, shadingGroup);
-                if (shadingGroup.isNull())
-                {
-                    shadingGroup = createShadingGroup(faceSetName);
-                }
 
                 // retrive face indices.
                 Alembic::AbcGeom::IFaceSetSchema::Sample samp;
@@ -202,9 +198,42 @@ namespace
                 const size_t size = samp.getFaces()->size();
 
                 MIntArray arr(faceArray, static_cast<unsigned int>(size));
+                
+                // Use sets command to create the shadingGroup
+                {
+                    // Feed the indexed component 
+                    MFnSingleIndexedComponent fnSComp;
+                    MObject comp = fnSComp.create( MFn::kMeshPolygonComponent );
+                    fnSComp.addElements( arr );
 
-                // copy indices to the set
-                copyIndicesToNode(arr, iNode, shadingGroup);
+                    MSelectionList setList;
+
+                    MFnDagNode mFnNode(iNode);
+
+                    MDagPath dpShape;
+                    status = mFnNode.getPath(dpShape);
+
+                    setList.add( dpShape, comp );
+
+                    status = MGlobal::setActiveSelectionList( setList );
+
+                    if (shadingGroup.isNull())
+                    {
+                        MString setCmd = "sets -r true -n \"";
+                        setCmd += faceSetName;
+                        setCmd += "\"";
+                        status = MGlobal::executeCommand( setCmd, true );
+
+                        status = getObjectByName(faceSetName, shadingGroup);
+                    }
+                    else
+                    {
+                        MString setCmd = "sets -add \"";
+                        setCmd += faceSetName;
+                        setCmd += "\"";
+                        status = MGlobal::executeCommand( setCmd, true );
+                    }
+                }
                 Alembic::Abc::ICompoundProperty arbProp =
                     faceSet.getSchema().getArbGeomParams();
 
@@ -291,6 +320,7 @@ namespace
     }
 }
 
+using namespace CreateSceneHelper;
 
 CreateSceneVisitor::CreateSceneVisitor(double iFrame,
     bool iUnmarkedFaceVaryingColors, const MObject & iParent,
@@ -1062,7 +1092,8 @@ MStatus CreateSceneVisitor::operator()(Alembic::AbcGeom::IPolyMesh& iNode)
         setConstantVisibility(visProp, polyObj);
         addProps(arbProp, polyObj, mUnmarkedFaceVaryingColors);
         addProps(userProp, polyObj, mUnmarkedFaceVaryingColors);
-        addFaceSets(polyObj, iNode);
+        if (iNode.getSchema().getNumSamples() <= 1)
+            addFaceSets(polyObj, iNode);
     }
 
     if ( mAction >= CONNECT )

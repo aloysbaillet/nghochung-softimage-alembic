@@ -3030,6 +3030,7 @@ MString connectAttr(ArgData & iArgData)
             dstPlug = mFn.findPlug("inMesh", true);
             modifier.connect(srcPlug, dstPlug);
             status = modifier.doIt();
+            CreateSceneHelper::addFaceSets(mFn.object(), iArgData.mData.mPolyMeshList[i].mMesh);
         }
     }
 
